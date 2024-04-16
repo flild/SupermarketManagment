@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using SupermarketManagment.Scripts.Category;
 
 namespace SupermarketManagment
 {
@@ -88,11 +89,13 @@ namespace SupermarketManagment
 
         private void btnProductList_Click(object sender, EventArgs e)
         {
+            openChildForm(new Product());
             HideSubmenu();
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
+            openChildForm(new Category());
             HideSubmenu();
         }
 

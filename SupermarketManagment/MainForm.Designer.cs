@@ -417,7 +417,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(42, 115);
+            this.lblUsername.Location = new System.Drawing.Point(41, 115);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(85, 20);
             this.lblUsername.TabIndex = 0;
@@ -427,7 +427,7 @@
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.ForeColor = System.Drawing.Color.White;
-            this.lblRole.Location = new System.Drawing.Point(33, 135);
+            this.lblRole.Location = new System.Drawing.Point(31, 135);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(104, 20);
             this.lblRole.TabIndex = 0;
