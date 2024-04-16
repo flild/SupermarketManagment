@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using SupermarketManagment.Scripts.Category;
+using SupermarketManagment.Scripts.Supplier;
 
 namespace SupermarketManagment
 {
@@ -122,6 +123,7 @@ namespace SupermarketManagment
 
         private void btnSupplier_Click(object sender, EventArgs e)
         {
+            openChildForm(new Supplier());
             HideSubmenu();
         }
 
