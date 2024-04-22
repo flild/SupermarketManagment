@@ -74,6 +74,25 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\Cashier\Cashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Cashier\Cashier.Designer.cs">
+      <DependentUpon>Cashier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Cashier\Extensions.cs" />
+    <Compile Include="Scripts\Cashier\LookUpProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Cashier\LookUpProduct.Designer.cs">
+      <DependentUpon>LookUpProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Cashier\Qty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Cashier\Qty.Designer.cs">
+      <DependentUpon>Qty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\Category\Category.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +119,18 @@
     <Compile Include="Scripts\Product\ProductModule.Designer.cs">
       <DependentUpon>ProductModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\Stock\ProductStockIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Stock\ProductStockIn.Designer.cs">
+      <DependentUpon>ProductStockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Stock\StockIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Stock\StockIn.Designer.cs">
+      <DependentUpon>StockIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\Supplier\Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +143,12 @@
     <Compile Include="Scripts\Supplier\SupplierModule.Designer.cs">
       <DependentUpon>SupplierModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\User\UserAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\User\UserAccount.Designer.cs">
+      <DependentUpon>UserAccount.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Scripts\Brand\Brand.resx">
       <DependentUpon>Brand.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +157,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Cashier\Cashier.resx">
+      <DependentUpon>Cashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Cashier\LookUpProduct.resx">
+      <DependentUpon>LookUpProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Cashier\Qty.resx">
+      <DependentUpon>Qty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Category\Category.resx">
       <DependentUpon>Category.cs</DependentUpon>
@@ -142,11 +188,20 @@
     <EmbeddedResource Include="Scripts\Product\ProductModule.resx">
       <DependentUpon>ProductModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Stock\ProductStockIn.resx">
+      <DependentUpon>ProductStockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Stock\StockIn.resx">
+      <DependentUpon>StockIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Supplier\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Supplier\SupplierModule.resx">
       <DependentUpon>SupplierModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\User\UserAccount.resx">
+      <DependentUpon>UserAccount.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

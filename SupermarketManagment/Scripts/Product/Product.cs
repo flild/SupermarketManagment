@@ -33,7 +33,10 @@ namespace SupermarketManagment
             dgvProduct.Rows.Clear();
             cn.Open();
             cmd = new SqlCommand(
-                "SELECT p.pcode, p.barcode, p.description, b.brand, c.category, p.price, p.reorder FROM tbProduct AS p INNER JOIN tbBrand AS b ON b.id = p.brand INNER JOIN tbCategory AS c on c.id = p.category WHERE CONCAT(p.description, b.brand, c.category) LIKE '%" + txtSearch.Text + "%'", cn);
+                "SELECT p.pcode, p.barcode, p.description, b.brand, c.category, p.price, p.reorder " +
+                "FROM tbProduct AS p INNER JOIN tbBrand AS b ON b.id = p.brand " +
+                "INNER JOIN tbCategory AS c ON c.id = p.category " +
+                "WHERE CONCAT(p.description, b.brand, c.category) LIKE '%" + txtSearch.Text + "%'", cn);
             dr = cmd.ExecuteReader();
             while(dr.Read())
             {

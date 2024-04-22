@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using SupermarketManagment.Scripts.Category;
 using SupermarketManagment.Scripts.Supplier;
+using SupermarketManagment.Scripts.User;
+using SupermarketManagment.Scripts.Stock;
 
 namespace SupermarketManagment
 {
@@ -113,6 +115,7 @@ namespace SupermarketManagment
 
         private void btnStockEntry_Click(object sender, EventArgs e)
         {
+            openChildForm(new StockIn());
             HideSubmenu();
         }
 
@@ -149,6 +152,7 @@ namespace SupermarketManagment
 
         private void btnUser_Click(object sender, EventArgs e)
         {
+            openChildForm(new UserAccount());
             HideSubmenu();
         }
 

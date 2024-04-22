@@ -41,7 +41,31 @@ namespace SupermarketManagment.Scripts.Supplier
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (MessageBox.Show(UpdateConfirmMessage, "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cmd = new SqlCommand("UPDATE tbSupplier SET supplier = @supplier,address=@address, contactperson = @contactperson, phone = @phone,email=@email, telegram = @telegram WHERE id = @id", cn);
+                    cmd.Parameters.AddWithValue("@id", lblId.Text);
+                    cmd.Parameters.AddWithValue("@supplier", txtSupplierName.Text);
+                    cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+                    cmd.Parameters.AddWithValue("@contactperson", txtContactPerson.Text);
+                    cmd.Parameters.AddWithValue("@phone", txtPhoneNum.Text);
+                    cmd.Parameters.AddWithValue("@email", txtemail.Text);
+                    cmd.Parameters.AddWithValue("@telegram", txtTelegram.Text);
 
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    MessageBox.Show("Record has been successful updated.", "POS");
+                    this.Dispose();
+                    supplier.LoadSupplier();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning");
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
