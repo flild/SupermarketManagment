@@ -37,7 +37,10 @@ namespace SupermarketManagment.Scripts.Cashier
             dgvProduct.Rows.Clear();
             cn.Open();
             cmd = new SqlCommand(
-                "SELECT p.pcode, p.barcode, p.description, b.brand, c.category, p.price, p.qty FROM tbProduct AS p INNER JOIN tbBrand AS b ON b.id = p.brand INNER JOIN tbCategory AS c on c.id = p.category WHERE CONCAT(p.description, b.brand, c.category) LIKE '%" + txtSearch.Text + "%'", cn);
+                "SELECT p.pcode, p.barcode, p.description, b.brand, c.category, p.price, p.qty " +
+                "FROM tbProduct AS p INNER JOIN tbBrand AS b ON b.id = p.brand " +
+                "INNER JOIN tbCategory AS c on c.id = p.category " +
+                "WHERE CONCAT(p.description, b.brand, c.category) LIKE '%" + txtSearch.Text + "%'", cn);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -66,6 +69,19 @@ namespace SupermarketManagment.Scripts.Cashier
                     cashier.lblTransactionNo.Text,
                     int.Parse(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString()));
                 qty.ShowDialog();
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadProduct();
+        }
+
+        private void LookUpProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
             }
         }
     }

@@ -39,23 +39,75 @@ namespace SupermarketManagment.Scripts.Cashier
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar == 13) && (txtQty.Text != string.Empty))
+            try
             {
+                string id = "";
+                int cart_qty = 0;
+                bool isFound = false;
                 cn.Open();
-                cmd = new SqlCommand("INSERT INTO tbCart(transactionno,pcode,price,qty,sdate, cashier) VALUES(@transactionno,@pcode,@price,@qty,@sdate,@cashier)", cn);
-
+                cmd = new SqlCommand("SELECT * FROM tbCart WHERE transactionno = @transactionno AND pcode = @pcode", cn);
                 cmd.Parameters.AddWithValue("@transactionno", transactionNo);
                 cmd.Parameters.AddWithValue("@pcode", pcode);
-                cmd.Parameters.AddWithValue("@price", price);
-                cmd.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
-                cmd.Parameters.AddWithValue("@sdate", DateTime.Now);
-                cmd.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
-
-                cmd.ExecuteNonQuery();
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    id = dr["id"].ToString();
+                    cart_qty = int.Parse(dr["qty"].ToString());
+                    isFound = true;
+                }
+                else
+                {
+                    isFound = false;
+                }
+                dr.Close();
                 cn.Close();
-                cashier.LoadCart();
-                this.Dispose();
+
+                if (qty < (int.Parse(txtQty.Text) + cart_qty))
+                {
+                    MessageBox.Show("Unable to procced. Remaining qty on hand is " + qty, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (isFound)
+                {
+                    cn.Open();
+                    cmd = new SqlCommand("UPDATE tbCart set qty = (qty + " + int.Parse(txtQty.Text) + ") WHERE id = '" + id + "'", cn);
+
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    cashier.LoadCart();
+                    cashier.txtBarcode.Clear();
+                    cashier.txtBarcode.Focus();
+                    this.Dispose();
+                }
+
+                else
+                {
+                    cn.Open();
+                    cmd = new SqlCommand("INSERT INTO tbCart(transactionno, pcode, price, qty, sdate, cashier) " +
+                    "VALUES(@transactionno, @pcode, @price, @qty, @sdate, @cashier)", cn);
+                    cmd.Parameters.AddWithValue("@transactionno", transactionNo);
+                    cmd.Parameters.AddWithValue("@pcode", pcode);
+                    cmd.Parameters.AddWithValue("@price", price);
+                    cmd.Parameters.AddWithValue("@qty", qty);
+                    cmd.Parameters.AddWithValue("@sdate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@cashier", cashier.lblUsername.Text);
+
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    cashier.txtBarcode.Clear();
+                    cashier.txtBarcode.Focus();
+                    cashier.LoadCart();
+                    this.Dispose();
+                }
+
             }
+            catch (Exception ex)
+            {
+                cn.Close();
+                MessageBox.Show(ex.Message, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            /////////////////////////////////////////////////////////////
         }
     }
 }
