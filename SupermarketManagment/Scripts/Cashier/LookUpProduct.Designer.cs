@@ -1,4 +1,4 @@
-﻿namespace SupermarketManagment.Scripts.Cashier
+﻿namespace SupermarketManagment.Scripts.CashierSpace
 {
     partial class LookUpProduct
     {

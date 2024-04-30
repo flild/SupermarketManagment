@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SupermarketManagment.Scripts.User;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SupermarketManagment.Scripts.Cashier
+namespace SupermarketManagment.Scripts.CashierSpace
 {
     public partial class Cashier : Form
     {
@@ -60,16 +61,34 @@ namespace SupermarketManagment.Scripts.Cashier
         private void btnAddDiscount_Click(object sender, EventArgs e)
         {
             slide(btnAddDiscount);
+            Discount discount = new Discount(this);
+            discount.lblId.Text = id;
+            discount.txtTotalPrice.Text = price;
+            discount.ShowDialog();
         }
 
         private void btnSettlePayment_Click(object sender, EventArgs e)
         {
             slide(btnSettlePayment);
+            Settle settle = new Settle(this);
+            settle.txtSale.Text = lblDisplayTotal.Text;
+            settle.ShowDialog();
+
         }
 
         private void btnClearCart_Click(object sender, EventArgs e)
         {
             slide(btnClearCart);
+            if (MessageBox.Show("Remove all items from cart?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                cn.Open();
+                cmd = new SqlCommand("DELETE from tbCart WHERE transactionno LIKE '" + lblTransactionNo.Text + "'", cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                MessageBox.Show("All items has been successfully remove", "Remove item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadCart();
+            }
+
         }
 
         private void btnDailySales_Click(object sender, EventArgs e)
@@ -85,6 +104,12 @@ namespace SupermarketManagment.Scripts.Cashier
         private void btnLogout_Click(object sender, EventArgs e)
         {
             slide(btnLogout);
+            if (MessageBox.Show("Logout application?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+            }
         }
 
         #endregion
@@ -92,6 +117,7 @@ namespace SupermarketManagment.Scripts.Cashier
         {
             try
             {
+                bool hasCart = false;
                 int i = 0;
                 double total = 0;
                 double discount = 0;
@@ -116,12 +142,25 @@ namespace SupermarketManagment.Scripts.Cashier
                                         dr["qty"].ToString(),
                                         dr["discount"].ToString(),
                                         double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
+                    hasCart = true;
                 }
                 dr.Close();
                 cn.Close();
                 lblSalesTotal.Text = total.ToString("#,##0.00");
                 lblDiscount.Text = discount.ToString("#,##0.00");
                 GetCartTotal();
+                if(hasCart)
+                {
+                    btnClearCart.Enabled = true;
+                    btnSettlePayment.Enabled = true;
+                    btnAddDiscount.Enabled = true;
+                }
+                else
+                {
+                    btnClearCart.Enabled = false;
+                    btnSettlePayment.Enabled = false;
+                    btnAddDiscount.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -156,7 +195,7 @@ namespace SupermarketManagment.Scripts.Cashier
                 cn.Open();
                 cmd = new SqlCommand("SELECT TOP 1 transactionno FROM tbCart" +
                                     " WHERE transactionno LIKE '" + sdate + "%' " +
-                                    "ORDER BY id description", cn);
+                                    "ORDER BY id DESC", cn);
                 dr = cmd.ExecuteReader();
                 dr.Read();
                 if (dr.HasRows)
@@ -243,7 +282,7 @@ namespace SupermarketManagment.Scripts.Cashier
 
                 if (qty < (int.Parse(txtQty.Text) + cart_qty))
                 {
-                    MessageBox.Show("Unable to procced. Remaining qty on hand is " + qty, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Unable to procced. Remaining quantity on hand is " + qty, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if (isFound)
@@ -281,6 +320,69 @@ namespace SupermarketManagment.Scripts.Cashier
             {
                 cn.Close();
                 MessageBox.Show(ex.Message, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvCashier_SelectionChanged(object sender, EventArgs e)
+        {
+            int i = dgvCashier.CurrentRow.Index;
+            id = dgvCashier[1,i].Value.ToString();
+            price = dgvCashier[7, i].Value.ToString();
+        }
+
+        private void dgvCashier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvCashier.Columns[e.ColumnIndex].Name;
+            int i = 0;
+
+
+            if (colName == "Delete")
+            {
+                if (MessageBox.Show("Remove this item", "Remove item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    dBConnect.ExecuteQuery("DELETE from tbCart WHERE id LIKE '" + dgvCashier.Rows[e.RowIndex].Cells[1].Value.ToString() + "'");
+                    MessageBox.Show("Item has been successfully removed", "Remove item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadCart();
+                }
+            }
+            else if(colName == "colAdd")
+            {
+                cn.Open();
+                cmd = new SqlCommand("SELECT SUM(qty) AS qty FROM tbProduct " +
+                    "WHERE pcode LIKE '" + dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString() + "' GROUP BY pcode", cn);
+                i = int.Parse(cmd.ExecuteScalar().ToString());
+                cn.Close();
+                if (int.Parse(dgvCashier.Rows[e.RowIndex].Cells[5].Value.ToString()) <i)
+                {
+                    dBConnect.ExecuteQuery("UPDATE tbCart SET qty = qty + " + int.Parse(txtQty.Text) +
+                        "WHERE transactionno LIKE '" + lblTransactionNo.Text + 
+                        "' AND pcode LIKE '" + dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString() + "'");
+                    LoadCart();
+                }
+                else
+                {
+                    MessageBox.Show("Remaining qty on hand is " + i + "!", "Out of Stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            else if (colName == "colReduce")
+            {
+                cn.Open();
+                cmd = new SqlCommand("SELECT SUM(qty) AS qty FROM tbCart " +
+                    "WHERE pcode LIKE '" + dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString() + "' GROUP BY pcode", cn);
+                i = int.Parse(cmd.ExecuteScalar().ToString());
+                cn.Close();
+                if (i > 1)
+                {
+                    dBConnect.ExecuteQuery("UPDATE tbCart SET qty = qty - " + int.Parse(txtQty.Text)+
+                        "WHERE transactionno LIKE '" + lblTransactionNo.Text +
+                        "' AND pcode LIKE '" + dgvCashier.Rows[e.RowIndex].Cells[2].Value.ToString() + "'");
+                    LoadCart();
+                }
+                else
+                {
+                    return;
+                }
             }
         }
     }

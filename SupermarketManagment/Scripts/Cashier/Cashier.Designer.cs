@@ -1,4 +1,4 @@
-﻿namespace SupermarketManagment.Scripts.Cashier
+﻿namespace SupermarketManagment.Scripts.CashierSpace
 {
     partial class Cashier
     {
@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cashier));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
@@ -54,6 +54,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblNameRole = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
+            this.txtQty = new System.Windows.Forms.TextBox();
             this.lblTimer = new System.Windows.Forms.Label();
             this.lblVatable = new System.Windows.Forms.Label();
             this.lblVat = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.colReduce = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtQty = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -170,6 +170,7 @@
             // btnClearCart
             // 
             this.btnClearCart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClearCart.Enabled = false;
             this.btnClearCart.FlatAppearance.BorderSize = 0;
             this.btnClearCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearCart.ForeColor = System.Drawing.Color.White;
@@ -188,6 +189,7 @@
             // btnSettlePayment
             // 
             this.btnSettlePayment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSettlePayment.Enabled = false;
             this.btnSettlePayment.FlatAppearance.BorderSize = 0;
             this.btnSettlePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettlePayment.ForeColor = System.Drawing.Color.White;
@@ -206,6 +208,7 @@
             // btnAddDiscount
             // 
             this.btnAddDiscount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddDiscount.Enabled = false;
             this.btnAddDiscount.FlatAppearance.BorderSize = 0;
             this.btnAddDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDiscount.ForeColor = System.Drawing.Color.White;
@@ -373,6 +376,15 @@
             this.panelRight.Size = new System.Drawing.Size(220, 611);
             this.panelRight.TabIndex = 3;
             // 
+            // txtQty
+            // 
+            this.txtQty.Location = new System.Drawing.Point(157, 230);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(51, 26);
+            this.txtQty.TabIndex = 16;
+            this.txtQty.Text = "1";
+            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lblTimer
             // 
             this.lblTimer.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -527,7 +539,7 @@
             this.lblDisplayTotal.Name = "lblDisplayTotal";
             this.lblDisplayTotal.Size = new System.Drawing.Size(220, 30);
             this.lblDisplayTotal.TabIndex = 0;
-            this.lblDisplayTotal.Text = "0,00";
+            this.lblDisplayTotal.Text = "0.00";
             this.lblDisplayTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dgvCashier
@@ -535,14 +547,14 @@
             this.dgvCashier.AllowUserToAddRows = false;
             this.dgvCashier.BackgroundColor = System.Drawing.Color.White;
             this.dgvCashier.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCashier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCashier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCashier.ColumnHeadersHeight = 30;
             this.dgvCashier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCashier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -564,6 +576,8 @@
             this.dgvCashier.RowHeadersVisible = false;
             this.dgvCashier.Size = new System.Drawing.Size(756, 611);
             this.dgvCashier.TabIndex = 5;
+            this.dgvCashier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCashier_CellContentClick);
+            this.dgvCashier.SelectionChanged += new System.EventHandler(this.dgvCashier_SelectionChanged);
             // 
             // Column1
             // 
@@ -598,8 +612,8 @@
             // Column7
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column7.HeaderText = "Price";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -608,8 +622,8 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column5.HeaderText = "Qty";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -618,8 +632,8 @@
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column6.HeaderText = "Discount";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -628,8 +642,8 @@
             // Column8
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column8.HeaderText = "Total";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -663,15 +677,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // txtQty
-            // 
-            this.txtQty.Location = new System.Drawing.Point(157, 230);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(51, 26);
-            this.txtQty.TabIndex = 16;
-            this.txtQty.Text = "1";
-            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Cashier
             // 
@@ -724,9 +729,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblNameRole;
         private System.Windows.Forms.Panel panelSlide;
-        private System.Windows.Forms.DataGridView dgvCashier;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Label lblVatable;
         private System.Windows.Forms.Label lblVat;
@@ -740,7 +743,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblDisplayTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -757,5 +759,8 @@
         public System.Windows.Forms.Label lblTransactionNo;
         private System.Windows.Forms.TextBox txtQty;
         public System.Windows.Forms.TextBox txtBarcode;
+        public System.Windows.Forms.DataGridView dgvCashier;
+        public System.Windows.Forms.Label lblDisplayTotal;
+        public System.Windows.Forms.Label lblNameRole;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SupermarketManagment.Scripts.CashierSpace;
+using SupermarketManagment.Scripts.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace SupermarketManagment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new Login());
         }
     }
 }

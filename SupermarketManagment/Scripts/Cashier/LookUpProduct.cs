@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SupermarketManagment.Scripts.Cashier
+namespace SupermarketManagment.Scripts.CashierSpace
 {
     public partial class LookUpProduct : Form
     {

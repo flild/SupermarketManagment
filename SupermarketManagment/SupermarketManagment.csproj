@@ -80,6 +80,12 @@
     <Compile Include="Scripts\Cashier\Cashier.Designer.cs">
       <DependentUpon>Cashier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\Cashier\Discount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Cashier\Discount.Designer.cs">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\Cashier\Extensions.cs" />
     <Compile Include="Scripts\Cashier\LookUpProduct.cs">
       <SubType>Form</SubType>
@@ -92,6 +98,12 @@
     </Compile>
     <Compile Include="Scripts\Cashier\Qty.Designer.cs">
       <DependentUpon>Qty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Cashier\Settle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Cashier\Settle.Designer.cs">
+      <DependentUpon>Settle.cs</DependentUpon>
     </Compile>
     <Compile Include="Scripts\Category\Category.cs">
       <SubType>Form</SubType>
@@ -143,6 +155,12 @@
     <Compile Include="Scripts\Supplier\SupplierModule.Designer.cs">
       <DependentUpon>SupplierModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\User\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\User\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\User\UserAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,11 +179,17 @@
     <EmbeddedResource Include="Scripts\Cashier\Cashier.resx">
       <DependentUpon>Cashier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Cashier\Discount.resx">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Cashier\LookUpProduct.resx">
       <DependentUpon>LookUpProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Cashier\Qty.resx">
       <DependentUpon>Qty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Cashier\Settle.resx">
+      <DependentUpon>Settle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Category\Category.resx">
       <DependentUpon>Category.cs</DependentUpon>
@@ -199,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Supplier\SupplierModule.resx">
       <DependentUpon>SupplierModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\User\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\User\UserAccount.resx">
       <DependentUpon>UserAccount.cs</DependentUpon>

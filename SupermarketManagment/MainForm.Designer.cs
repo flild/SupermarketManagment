@@ -525,11 +525,11 @@
         private System.Windows.Forms.Button btnStore;
         private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblUsername;
+        public System.Windows.Forms.Label lblName;
     }
 }
 

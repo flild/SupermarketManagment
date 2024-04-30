@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SupermarketManagment
 {
@@ -26,6 +27,22 @@ namespace SupermarketManagment
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
+        }
+        public void ExecuteQuery(string sql)
+        {
+            try
+            {
+                cn.ConnectionString = MyConnection();
+                cn.Open();
+                cmd = new SqlCommand(sql, cn);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
     }
 }
