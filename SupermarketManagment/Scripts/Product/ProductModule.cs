@@ -66,23 +66,19 @@ namespace SupermarketManagment
         {
             try
             {
-                if (MessageBox.Show(SaveConfirmMessage, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cn.Open();
-                    cmd = new SqlCommand("INSERT INTO tbProduct(pcode, barcode, description, brand, category, price, reorder)VALUES(@pcode,@barcode,@description,@brand,@category,@price,@reorder)", cn);
-                    cmd.Parameters.AddWithValue("@pcode", txtProductCode.Text);
-                    cmd.Parameters.AddWithValue("@barcode", txtBarcode.Text);
-                    cmd.Parameters.AddWithValue("@description", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@brand", cboBrand.SelectedValue);
-                    cmd.Parameters.AddWithValue("@category", cboCategory.SelectedValue);
-                    cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
-                    cmd.Parameters.AddWithValue("@reorder", UDReorder.Value);
-                    cmd.ExecuteNonQuery();
-                    cn.Close();
-                    MessageBox.Show("Record has been successful saved.", "POS");
-                    Clear();
-                    product.LoadProduct();
-                }
+                cn.Open();
+                cmd = new SqlCommand("INSERT INTO tbProduct(pcode, barcode, description, brand, category, price, reorder)VALUES(@pcode,@barcode,@description,@brand,@category,@price,@reorder)", cn);
+                cmd.Parameters.AddWithValue("@pcode", txtProductCode.Text);
+                cmd.Parameters.AddWithValue("@barcode", txtBarcode.Text);
+                cmd.Parameters.AddWithValue("@description", txtDescription.Text);
+                cmd.Parameters.AddWithValue("@brand", cboBrand.SelectedValue);
+                cmd.Parameters.AddWithValue("@category", cboCategory.SelectedValue);
+                cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
+                cmd.Parameters.AddWithValue("@reorder", UDReorder.Value);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                Clear();
+                product.LoadProduct();
             }
             catch (Exception ex)
             {
@@ -99,23 +95,20 @@ namespace SupermarketManagment
         {
             try
             {
-                if (MessageBox.Show(SaveConfirmMessage, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cn.Open();
-                    cmd = new SqlCommand("UPDATE tbProduct SET barcode=@barcode, description = @description, brand = @brand, category = @category, price = @price, reorder = @reorder WHERE pcode LIKE @pcode", cn);
-                    cmd.Parameters.AddWithValue("@pcode", txtProductCode.Text);
-                    cmd.Parameters.AddWithValue("@barcode", txtBarcode.Text);
-                    cmd.Parameters.AddWithValue("@description", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@brand", cboBrand.SelectedValue);
-                    cmd.Parameters.AddWithValue("@category", cboCategory.SelectedValue);
-                    cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
-                    cmd.Parameters.AddWithValue("@reorder", UDReorder.Value);
-                    cmd.ExecuteNonQuery();
-                    cn.Close();
-                    MessageBox.Show("Product has been successful saved.", "POS");
-                    Clear();
-                    this.Dispose();
-                }
+
+                cn.Open();
+                cmd = new SqlCommand("UPDATE tbProduct SET barcode=@barcode, description = @description, brand = @brand, category = @category, price = @price, reorder = @reorder WHERE pcode LIKE @pcode", cn);
+                cmd.Parameters.AddWithValue("@pcode", txtProductCode.Text);
+                cmd.Parameters.AddWithValue("@barcode", txtBarcode.Text);
+                cmd.Parameters.AddWithValue("@description", txtDescription.Text);
+                cmd.Parameters.AddWithValue("@brand", cboBrand.SelectedValue);
+                cmd.Parameters.AddWithValue("@category", cboCategory.SelectedValue);
+                cmd.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
+                cmd.Parameters.AddWithValue("@reorder", UDReorder.Value);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                Clear();
+                this.Dispose();
             }
             catch (Exception ex)
             {

@@ -73,13 +73,12 @@ namespace SupermarketManagment.Scripts.User
                     {
                         MessageBox.Show("Account is inactive. Unable to login", "Inactive Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    MessageBox.Show("Welcome " + _name + "!", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtName.Clear();
                     txtPassword.Clear();
                     this.Hide();
                     if (_role == "Cashier")
                     {
-                        Cashier cashier = new Cashier();
+                        CashierClass cashier = new CashierClass();
                         cashier.lblUsername.Text = _username;
                         cashier.lblNameRole.Text = _name + " | " + _role;
                         cashier.ShowDialog();
@@ -101,7 +100,6 @@ namespace SupermarketManagment.Scripts.User
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw;
             }
         }
 
@@ -110,6 +108,14 @@ namespace SupermarketManagment.Scripts.User
             txtName.Clear();
             txtPassword.Clear();
             txtName.Focus();
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13) //enter
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }

@@ -54,7 +54,6 @@
             this.txtSale.Name = "txtSale";
             this.txtSale.Size = new System.Drawing.Size(218, 32);
             this.txtSale.TabIndex = 0;
-            this.txtSale.TextChanged += new System.EventHandler(this.txtSale_TextChanged);
             // 
             // txtCash
             // 
@@ -64,6 +63,7 @@
             this.txtCash.Size = new System.Drawing.Size(218, 32);
             this.txtCash.TabIndex = 1;
             this.txtCash.Text = "0";
+            this.txtCash.TextChanged += new System.EventHandler(this.txtCash_TextChanged);
             // 
             // txtChange
             // 

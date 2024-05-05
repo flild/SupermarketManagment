@@ -1,4 +1,5 @@
-﻿using SupermarketManagment.Scripts.User;
+﻿using SupermarketManagment.Scripts.Cashier;
+using SupermarketManagment.Scripts.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SupermarketManagment.Scripts.CashierSpace
 {
-    public partial class Cashier : Form
+    public partial class CashierClass : Form
     {
         private SqlConnection cn = new SqlConnection();
         private SqlCommand cmd = new SqlCommand();
@@ -22,7 +23,7 @@ namespace SupermarketManagment.Scripts.CashierSpace
         private int qty;
         private string id;
         private string price;
-        public Cashier()
+        public CashierClass()
         {
             InitializeComponent();
             cn = new SqlConnection(dBConnect.MyConnection());
@@ -94,6 +95,8 @@ namespace SupermarketManagment.Scripts.CashierSpace
         private void btnDailySales_Click(object sender, EventArgs e)
         {
             slide(btnDailySales);
+            DailySale dailySale = new DailySale(lblUsername.Text);
+            dailySale.ShowDialog();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -104,6 +107,11 @@ namespace SupermarketManagment.Scripts.CashierSpace
         private void btnLogout_Click(object sender, EventArgs e)
         {
             slide(btnLogout);
+            if(dgvCashier.Rows.Count > 0)
+            {
+                MessageBox.Show("Unable to logout. Please cancel the transaction", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Logout application?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();

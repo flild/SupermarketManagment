@@ -17,9 +17,9 @@ namespace SupermarketManagment.Scripts.CashierSpace
         private SqlCommand cmd = new SqlCommand();
         private DBConnect dBConnect = new DBConnect();
         private SqlDataReader dr;
-        private Cashier cashier;
+        private CashierClass cashier;
 
-        public LookUpProduct(Cashier cashier)
+        public LookUpProduct(CashierClass cashier)
         {
             InitializeComponent();
             cn = new SqlConnection(dBConnect.MyConnection());

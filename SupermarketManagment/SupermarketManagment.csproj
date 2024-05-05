@@ -74,11 +74,23 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\Cashier\CancelOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Cashier\CancelOrder.Designer.cs">
+      <DependentUpon>CancelOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\Cashier\Cashier.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Scripts\Cashier\Cashier.Designer.cs">
       <DependentUpon>Cashier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Cashier\DailySale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Cashier\DailySale.Designer.cs">
+      <DependentUpon>DailySale.cs</DependentUpon>
     </Compile>
     <Compile Include="Scripts\Cashier\Discount.cs">
       <SubType>Form</SubType>
@@ -104,6 +116,12 @@
     </Compile>
     <Compile Include="Scripts\Cashier\Settle.Designer.cs">
       <DependentUpon>Settle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Cashier\Void.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Cashier\Void.Designer.cs">
+      <DependentUpon>Void.cs</DependentUpon>
     </Compile>
     <Compile Include="Scripts\Category\Category.cs">
       <SubType>Form</SubType>
@@ -176,8 +194,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Cashier\CancelOrder.resx">
+      <DependentUpon>CancelOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Cashier\Cashier.resx">
       <DependentUpon>Cashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Cashier\DailySale.resx">
+      <DependentUpon>DailySale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Cashier\Discount.resx">
       <DependentUpon>Discount.cs</DependentUpon>
@@ -190,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Cashier\Settle.resx">
       <DependentUpon>Settle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Cashier\Void.resx">
+      <DependentUpon>Void.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Category\Category.resx">
       <DependentUpon>Category.cs</DependentUpon>

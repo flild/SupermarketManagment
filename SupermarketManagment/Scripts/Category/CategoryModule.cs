@@ -18,8 +18,7 @@ namespace SupermarketManagment.Scripts.Category
         private DBConnect dBConnect = new DBConnect();
 
         private Category category;
-        private string SaveConfirmMessage = "Are you sure you want to save this category?";
-        private string UpdateConfirmMessage = "Are you sure you want to update this category";
+
 
         public CategoryModule(Category category)
         {
@@ -32,17 +31,13 @@ namespace SupermarketManagment.Scripts.Category
         {
             try
             {
-                if (MessageBox.Show(SaveConfirmMessage, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cn.Open();
-                    cmd = new SqlCommand("INSERT INTO tbCategory(category)VALUES(@category)", cn);
-                    cmd.Parameters.AddWithValue("@category", txtCategory.Text);
-                    cmd.ExecuteNonQuery();
-                    cn.Close();
-                    MessageBox.Show("Record has been successful saved.", "POS");
-                    Clear();
-                    category.LoadCategory();
-                }
+                cn.Open();
+                cmd = new SqlCommand("INSERT INTO tbCategory(category)VALUES(@category)", cn);
+                cmd.Parameters.AddWithValue("@category", txtCategory.Text);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                Clear();
+                category.LoadCategory();
             }
             catch (Exception ex)
             {
@@ -64,17 +59,13 @@ namespace SupermarketManagment.Scripts.Category
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(UpdateConfirmMessage, "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                cn.Open();
-                cmd = new SqlCommand("UPDATE tbCategory SET category = @category WHERE id LIKE '" + lblId.Text + "'", cn);
-                cmd.Parameters.AddWithValue("@category", txtCategory.Text);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                MessageBox.Show("Category has been succefully updated", "POS");
-                Clear();
-                this.Dispose();
-            }
+            cn.Open();
+            cmd = new SqlCommand("UPDATE tbCategory SET category = @category WHERE id LIKE '" + lblId.Text + "'", cn);
+            cmd.Parameters.AddWithValue("@category", txtCategory.Text);
+            cmd.ExecuteNonQuery();
+            cn.Close();
+            Clear();
+            this.Dispose();
         }
 
         private void picClose_Click(object sender, EventArgs e)

@@ -1,9 +1,6 @@
-﻿using SupermarketManagment.Scripts.CashierSpace;
+﻿using SupermarketManagment.Scripts.Cashier;
 using SupermarketManagment.Scripts.User;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SupermarketManagment

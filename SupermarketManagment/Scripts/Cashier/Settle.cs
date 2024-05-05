@@ -17,9 +17,9 @@ namespace SupermarketManagment.Scripts.CashierSpace
         private SqlCommand cmd = new SqlCommand();
         private DBConnect dBConnect = new DBConnect();
         private SqlDataReader dr;
-        private Cashier cashier;
+        private CashierClass cashier;
 
-        public Settle(Cashier cashier)
+        public Settle(CashierClass cashier)
         {
             InitializeComponent();
             cn = new SqlConnection(dBConnect.MyConnection());
@@ -148,7 +148,13 @@ namespace SupermarketManagment.Scripts.CashierSpace
                 MessageBox.Show(ex.Message, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void txtSale_TextChanged(object sender, EventArgs e)
+        private void Settle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) this.Dispose();
+            else if (e.KeyCode == Keys.Enter) btnEnter.PerformClick();
+        }
+
+        private void txtCash_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -163,12 +169,5 @@ namespace SupermarketManagment.Scripts.CashierSpace
                 MessageBox.Show(ex.Message, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void Settle_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape) this.Dispose();
-            else if (e.KeyCode == Keys.Enter) btnEnter.PerformClick();
-        }
-
-
     }
 }

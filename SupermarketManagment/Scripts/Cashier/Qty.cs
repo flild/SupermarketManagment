@@ -21,9 +21,9 @@ namespace SupermarketManagment.Scripts.CashierSpace
         private double price;
         private string transactionNo;
         private int qty;
-        Cashier cashier;
+        CashierClass cashier;
 
-        public Qty(Cashier cashier)
+        public Qty(CashierClass cashier)
         {
             InitializeComponent();
             cn = new SqlConnection(dBConnect.MyConnection());

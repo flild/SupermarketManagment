@@ -17,7 +17,6 @@ namespace SupermarketManagment
         private SqlCommand cmd = new SqlCommand();
         private DBConnect dBConnect = new DBConnect();
 
-        private string SaveConfirmMessage = "Are you sure you want to save this brand?";
         private string UpdateConfirmMessage = "Are you sure you want to update this brand";
         private Brand brand;
 
@@ -37,17 +36,13 @@ namespace SupermarketManagment
         {
             try
             {
-                if (MessageBox.Show(SaveConfirmMessage, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cn.Open();
-                    cmd = new SqlCommand("INSERT INTO tbBrand(brand)VALUES(@brand)",cn);
-                    cmd.Parameters.AddWithValue("@brand", txtBrand.Text);
-                    cmd.ExecuteNonQuery();
-                    cn.Close();
-                    MessageBox.Show("Record has been successful saved.", "POS");
-                    Clear();
-                    brand.LoadBrand();
-                }
+                cn.Open();
+                cmd = new SqlCommand("INSERT INTO tbBrand(brand)VALUES(@brand)",cn);
+                cmd.Parameters.AddWithValue("@brand", txtBrand.Text);
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                Clear();
+                brand.LoadBrand();
             }
             catch(Exception ex)
             {
@@ -69,17 +64,13 @@ namespace SupermarketManagment
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(UpdateConfirmMessage, "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                cn.Open();
-                cmd =new SqlCommand("UPDATE tbBrand SET brand = @brand WHERE id LIKE '" + lblId.Text + "'", cn);
-                cmd.Parameters.AddWithValue("@brand", txtBrand.Text);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                MessageBox.Show("Brand has been succefully updated", "POS");
-                Clear();
-                this.Dispose();
-            }
+            cn.Open();
+            cmd =new SqlCommand("UPDATE tbBrand SET brand = @brand WHERE id LIKE '" + lblId.Text + "'", cn);
+            cmd.Parameters.AddWithValue("@brand", txtBrand.Text);
+            cmd.ExecuteNonQuery();
+            cn.Close();
+            Clear();
+            this.Dispose();
         }
     }
 }

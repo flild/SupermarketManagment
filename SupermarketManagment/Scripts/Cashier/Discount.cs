@@ -17,10 +17,10 @@ namespace SupermarketManagment.Scripts.CashierSpace
         private SqlCommand cmd = new SqlCommand();
         private DBConnect dBConnect = new DBConnect();
         private SqlDataReader dr;
-        private Cashier cashier;
+        private CashierClass cashier;
 
 
-        public Discount(Cashier cashier)
+        public Discount(CashierClass cashier)
         {
             InitializeComponent();
             cn = new SqlConnection(dBConnect.MyConnection());
