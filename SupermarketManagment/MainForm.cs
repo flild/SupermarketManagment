@@ -12,6 +12,7 @@ using SupermarketManagment.Scripts.Category;
 using SupermarketManagment.Scripts.Supplier;
 using SupermarketManagment.Scripts.User;
 using SupermarketManagment.Scripts.Stock;
+using SupermarketManagment.Scripts.Store;
 
 namespace SupermarketManagment
 {
@@ -21,7 +22,7 @@ namespace SupermarketManagment
         private SqlCommand cmd = new SqlCommand();
         private DBConnect dBConnect = new DBConnect();
         private Form activeForm = null;
-
+        public string _pass;
         public MainForm()
         {
             InitializeComponent();
@@ -152,13 +153,15 @@ namespace SupermarketManagment
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            openChildForm(new UserAccount());
+            openChildForm(new UserAccount(lblUsername.Text));
             HideSubmenu();
         }
 
         private void btnStore_Click(object sender, EventArgs e)
         {
             HideSubmenu();
+            StoreClass store = new StoreClass();
+            store.ShowDialog();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

@@ -86,6 +86,12 @@
     <Compile Include="Scripts\Cashier\Cashier.Designer.cs">
       <DependentUpon>Cashier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\Cashier\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Cashier\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\Cashier\DailySale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     <Compile Include="Scripts\Stock\StockIn.Designer.cs">
       <DependentUpon>StockIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\Store\Store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Store\Store.Designer.cs">
+      <DependentUpon>Store.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\Supplier\Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,18 @@
     </Compile>
     <Compile Include="Scripts\User\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\User\UserProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\User\UserProperties.Designer.cs">
+      <DependentUpon>UserProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\User\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\User\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Scripts\User\UserAccount.cs">
       <SubType>Form</SubType>
@@ -199,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Cashier\Cashier.resx">
       <DependentUpon>Cashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Cashier\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Cashier\DailySale.resx">
       <DependentUpon>DailySale.cs</DependentUpon>
@@ -245,6 +272,9 @@
     <EmbeddedResource Include="Scripts\Stock\StockIn.resx">
       <DependentUpon>StockIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Store\Store.resx">
+      <DependentUpon>Store.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Scripts\Supplier\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +283,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\User\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\User\UserProperties.resx">
+      <DependentUpon>UserProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\User\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Scripts\User\UserAccount.resx">
       <DependentUpon>UserAccount.cs</DependentUpon>

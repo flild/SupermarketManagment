@@ -88,6 +88,7 @@ namespace SupermarketManagment.Scripts.User
                         MainForm mainForm = new MainForm();
                         mainForm.lblUsername.Text = _username;
                         mainForm.lblName.Text = _name;
+                        mainForm._pass = password;
                         mainForm.ShowDialog();
                     }
                 }

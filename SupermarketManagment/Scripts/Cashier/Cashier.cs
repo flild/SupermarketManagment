@@ -102,6 +102,8 @@ namespace SupermarketManagment.Scripts.CashierSpace
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             slide(btnChangePassword);
+            ChangePassword changePass = new ChangePassword(lblUsername.Text);
+            changePass.ShowDialog();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

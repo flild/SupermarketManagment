@@ -14,6 +14,7 @@ namespace SupermarketManagment
         private string con;
         private SqlConnection cn = new SqlConnection();
         private SqlCommand cmd = new SqlCommand();
+        private SqlDataReader dr;
         public string MyConnection()
         {
             con = @"Data Source=(local);Initial Catalog=DBPOSale;Integrated Security=True";
@@ -43,6 +44,22 @@ namespace SupermarketManagment
                 MessageBox.Show(ex.Message, "POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+        }
+        public string GetPassword(string username)
+        {
+            string password = string.Empty;
+            cn.ConnectionString = MyConnection();
+            cn.Open();
+            cmd = new SqlCommand("SELECT password FROM tbUser WHERE username = '" + username+"'" , cn);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            if(dr.HasRows)
+            {
+                password = dr["password"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+            return password;
         }
     }
 }
