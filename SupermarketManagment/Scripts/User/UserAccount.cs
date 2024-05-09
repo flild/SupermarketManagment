@@ -32,6 +32,7 @@ namespace SupermarketManagment.Scripts.User
             InitializeComponent();
             cn = new SqlConnection(dBConnect.MyConnection());
             lblUsername.Text = username;
+            dgvUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             LoadUser();
         }
 
@@ -86,6 +87,7 @@ namespace SupermarketManagment.Scripts.User
                     cn.Close();
                     MessageBox.Show("new account been successful addded.", "POS");
                     Clear();
+                    LoadUser();
                 }
             }
             catch (Exception ex)
@@ -142,7 +144,8 @@ namespace SupermarketManagment.Scripts.User
         private void dgvUser_SelectionChanged(object sender, EventArgs e)
         {
             int i = dgvUser.CurrentRow.Index;
-            dgvUser.Rows[i].Selected = true;
+            //dgvUser.Rows[i].Selected = true;
+
             username = dgvUser[1,i].Value.ToString();
             name = dgvUser[2, i].Value.ToString();
             role = dgvUser[4, i].Value.ToString();
@@ -159,8 +162,8 @@ namespace SupermarketManagment.Scripts.User
                 btnResetPassword.Enabled = true;
                 lblAccountNote.Text = "To change the password for " + username + ", click \"Reset password\"";
             }
-            gbUser.Text = "Password for " +username;
-            
+            gbUser.Text = "Password for " + username;
+
         }
 
         private void btnResetPassword_Click(object sender, EventArgs e)
@@ -171,10 +174,11 @@ namespace SupermarketManagment.Scripts.User
 
         private void btnPropert_Click(object sender, EventArgs e)
         {
-            UserProperties properties = new UserProperties();
+            UserProperties properties = new UserProperties(username, this);
+            properties.Text = name + "\\" + username + " Properties";
             properties.txtFullName.Text = name;
             properties.CboRole.Text = role;
-            properties.cboActivate.Text = accStatus;
+            properties.cboActivate.Text = accStatus == "Actived" ? bool.TrueString: bool.FalseString;
             properties.ShowDialog();
         }
     }
