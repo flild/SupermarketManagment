@@ -105,6 +105,8 @@ namespace SupermarketManagment.Scripts.CashierSpace
         {
             try
             {
+                if (string.IsNullOrEmpty(txtCash.Text))
+                    return;
                 double sale = double.Parse(txtSale.Text);
                 double cash = double.Parse(txtCash.Text);
                 double charge = cash - sale;
