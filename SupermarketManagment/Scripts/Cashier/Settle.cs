@@ -48,68 +48,12 @@ namespace SupermarketManagment.Scripts.CashierSpace
         private void BtnZero_Click(object sender, EventArgs e) { ButtonHandler(BtnZero, sender, e); }
         private void btnZeroZero_Click(object sender, EventArgs e) { ButtonHandler(btnZeroZero, sender, e); } 
         #endregion
-        #region говнокод с ютуба
-        /* private void btnOne_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnOne.Text;
- }
-
- private void btnTwo_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnTwo.Text;
- }
-
- private void btnThree_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnThree.Text;
- }
-
- private void btnFour_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnFour.Text;
- }
-
- private void btnFive_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnFive.Text;
- }
-
- private void btnSix_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnSix.Text;
- }
-
- private void btnSeven_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnSeven.Text;
- }
-
- private void btnEight_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnEight.Text;
- }
-
- private void btnNine_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnNine.Text;
- }
-
- private void BtnZero_Click(object sender, EventArgs e)
- {
-     txtCash.Text += BtnZero.Text;
- }
-
- private void btnZeroZero_Click(object sender, EventArgs e)
- {
-     txtCash.Text += btnZeroZero.Text;
- }*/
-
-        #endregion
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtCash.Clear();
             txtCash.Focus();
         }
+        
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
@@ -136,6 +80,9 @@ namespace SupermarketManagment.Scripts.CashierSpace
                         cmd.ExecuteNonQuery();
                         cn.Close();
                     }
+                    Recept recept = new Recept(cashier);
+                    //recept.LoadRecept(txtCash.Text, txtChange.Text);
+                    recept.ShowDialog();
                     MessageBox.Show("Payment succefully saved!", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cashier.GetTransactionNo();
                     cashier.LoadCart();

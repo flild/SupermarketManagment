@@ -4,7 +4,7 @@
 
     partial class DataSet1
     {
-        partial class DtReceptDataTable
+        partial class dtReceptDataTable
         {
         }
     }

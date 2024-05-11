@@ -24,7 +24,7 @@ namespace SupermarketManagment {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet1 : global::System.Data.DataSet {
         
-        private DtReceptDataTable tableDtRecept;
+        private dtReceptDataTable tabledtRecept;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace SupermarketManagment {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DtRecept"] != null)) {
-                    base.Tables.Add(new DtReceptDataTable(ds.Tables["DtRecept"]));
+                if ((ds.Tables["dtRecept"] != null)) {
+                    base.Tables.Add(new dtReceptDataTable(ds.Tables["dtRecept"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace SupermarketManagment {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DtReceptDataTable DtRecept {
+        public dtReceptDataTable dtRecept {
             get {
-                return this.tableDtRecept;
+                return this.tabledtRecept;
             }
         }
         
@@ -152,8 +152,8 @@ namespace SupermarketManagment {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DtRecept"] != null)) {
-                    base.Tables.Add(new DtReceptDataTable(ds.Tables["DtRecept"]));
+                if ((ds.Tables["dtRecept"] != null)) {
+                    base.Tables.Add(new dtReceptDataTable(ds.Tables["dtRecept"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace SupermarketManagment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDtRecept = ((DtReceptDataTable)(base.Tables["DtRecept"]));
+            this.tabledtRecept = ((dtReceptDataTable)(base.Tables["dtRecept"]));
             if ((initTable == true)) {
-                if ((this.tableDtRecept != null)) {
-                    this.tableDtRecept.InitVars();
+                if ((this.tabledtRecept != null)) {
+                    this.tabledtRecept.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace SupermarketManagment {
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDtRecept = new DtReceptDataTable();
-            base.Tables.Add(this.tableDtRecept);
+            this.tabledtRecept = new dtReceptDataTable();
+            base.Tables.Add(this.tabledtRecept);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeDtRecept() {
+        private bool ShouldSerializedtRecept() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace SupermarketManagment {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void DtReceptRowChangeEventHandler(object sender, DtReceptRowChangeEvent e);
+        public delegate void dtReceptRowChangeEventHandler(object sender, dtReceptRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DtReceptDataTable : global::System.Data.TypedTableBase<DtReceptRow> {
+        public partial class dtReceptDataTable : global::System.Data.TypedTableBase<dtReceptRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -301,8 +301,8 @@ namespace SupermarketManagment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DtReceptDataTable() {
-                this.TableName = "DtRecept";
+            public dtReceptDataTable() {
+                this.TableName = "dtRecept";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -310,7 +310,7 @@ namespace SupermarketManagment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DtReceptDataTable(global::System.Data.DataTable table) {
+            internal dtReceptDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -327,7 +327,7 @@ namespace SupermarketManagment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected DtReceptDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected dtReceptDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -423,34 +423,34 @@ namespace SupermarketManagment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DtReceptRow this[int index] {
+            public dtReceptRow this[int index] {
                 get {
-                    return ((DtReceptRow)(this.Rows[index]));
+                    return ((dtReceptRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DtReceptRowChangeEventHandler DtReceptRowChanging;
+            public event dtReceptRowChangeEventHandler dtReceptRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DtReceptRowChangeEventHandler DtReceptRowChanged;
+            public event dtReceptRowChangeEventHandler dtReceptRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DtReceptRowChangeEventHandler DtReceptRowDeleting;
+            public event dtReceptRowChangeEventHandler dtReceptRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DtReceptRowChangeEventHandler DtReceptRowDeleted;
+            public event dtReceptRowChangeEventHandler dtReceptRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddDtReceptRow(DtReceptRow row) {
+            public void AdddtReceptRow(dtReceptRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DtReceptRow AddDtReceptRow(string id, string transactionno, string pcode, string price, string qty, string discount, string total, string sdate, string status, string pdescription) {
-                DtReceptRow rowDtReceptRow = ((DtReceptRow)(this.NewRow()));
+            public dtReceptRow AdddtReceptRow(string id, string transactionno, string pcode, string price, string qty, string discount, string total, string sdate, string status, string pdescription) {
+                dtReceptRow rowdtReceptRow = ((dtReceptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         transactionno,
@@ -462,15 +462,15 @@ namespace SupermarketManagment {
                         sdate,
                         status,
                         pdescription};
-                rowDtReceptRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDtReceptRow);
-                return rowDtReceptRow;
+                rowdtReceptRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtReceptRow);
+                return rowdtReceptRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DtReceptDataTable cln = ((DtReceptDataTable)(base.Clone()));
+                dtReceptDataTable cln = ((dtReceptDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -478,7 +478,7 @@ namespace SupermarketManagment {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DtReceptDataTable();
+                return new dtReceptDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -523,28 +523,28 @@ namespace SupermarketManagment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DtReceptRow NewDtReceptRow() {
-                return ((DtReceptRow)(this.NewRow()));
+            public dtReceptRow NewdtReceptRow() {
+                return ((dtReceptRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DtReceptRow(builder);
+                return new dtReceptRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DtReceptRow);
+                return typeof(dtReceptRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DtReceptRowChanged != null)) {
-                    this.DtReceptRowChanged(this, new DtReceptRowChangeEvent(((DtReceptRow)(e.Row)), e.Action));
+                if ((this.dtReceptRowChanged != null)) {
+                    this.dtReceptRowChanged(this, new dtReceptRowChangeEvent(((dtReceptRow)(e.Row)), e.Action));
                 }
             }
             
@@ -552,8 +552,8 @@ namespace SupermarketManagment {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DtReceptRowChanging != null)) {
-                    this.DtReceptRowChanging(this, new DtReceptRowChangeEvent(((DtReceptRow)(e.Row)), e.Action));
+                if ((this.dtReceptRowChanging != null)) {
+                    this.dtReceptRowChanging(this, new dtReceptRowChangeEvent(((dtReceptRow)(e.Row)), e.Action));
                 }
             }
             
@@ -561,8 +561,8 @@ namespace SupermarketManagment {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DtReceptRowDeleted != null)) {
-                    this.DtReceptRowDeleted(this, new DtReceptRowChangeEvent(((DtReceptRow)(e.Row)), e.Action));
+                if ((this.dtReceptRowDeleted != null)) {
+                    this.dtReceptRowDeleted(this, new dtReceptRowChangeEvent(((dtReceptRow)(e.Row)), e.Action));
                 }
             }
             
@@ -570,14 +570,14 @@ namespace SupermarketManagment {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DtReceptRowDeleting != null)) {
-                    this.DtReceptRowDeleting(this, new DtReceptRowChangeEvent(((DtReceptRow)(e.Row)), e.Action));
+                if ((this.dtReceptRowDeleting != null)) {
+                    this.dtReceptRowDeleting(this, new dtReceptRowChangeEvent(((dtReceptRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveDtReceptRow(DtReceptRow row) {
+            public void RemovedtReceptRow(dtReceptRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -604,7 +604,7 @@ namespace SupermarketManagment {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DtReceptDataTable";
+                attribute2.FixedValue = "dtReceptDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -648,15 +648,15 @@ namespace SupermarketManagment {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DtReceptRow : global::System.Data.DataRow {
+        public partial class dtReceptRow : global::System.Data.DataRow {
             
-            private DtReceptDataTable tableDtRecept;
+            private dtReceptDataTable tabledtRecept;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DtReceptRow(global::System.Data.DataRowBuilder rb) : 
+            internal dtReceptRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDtRecept = ((DtReceptDataTable)(this.Table));
+                this.tabledtRecept = ((dtReceptDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -664,14 +664,14 @@ namespace SupermarketManagment {
             public string id {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.idColumn]));
+                        return ((string)(this[this.tabledtRecept.idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'id\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'id\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.idColumn] = value;
+                    this[this.tabledtRecept.idColumn] = value;
                 }
             }
             
@@ -680,14 +680,14 @@ namespace SupermarketManagment {
             public string transactionno {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.transactionnoColumn]));
+                        return ((string)(this[this.tabledtRecept.transactionnoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'transactionno\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'transactionno\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.transactionnoColumn] = value;
+                    this[this.tabledtRecept.transactionnoColumn] = value;
                 }
             }
             
@@ -696,14 +696,14 @@ namespace SupermarketManagment {
             public string pcode {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.pcodeColumn]));
+                        return ((string)(this[this.tabledtRecept.pcodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'pcode\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'pcode\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.pcodeColumn] = value;
+                    this[this.tabledtRecept.pcodeColumn] = value;
                 }
             }
             
@@ -712,14 +712,14 @@ namespace SupermarketManagment {
             public string price {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.priceColumn]));
+                        return ((string)(this[this.tabledtRecept.priceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'price\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'price\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.priceColumn] = value;
+                    this[this.tabledtRecept.priceColumn] = value;
                 }
             }
             
@@ -728,14 +728,14 @@ namespace SupermarketManagment {
             public string qty {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.qtyColumn]));
+                        return ((string)(this[this.tabledtRecept.qtyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'qty\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'qty\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.qtyColumn] = value;
+                    this[this.tabledtRecept.qtyColumn] = value;
                 }
             }
             
@@ -744,14 +744,14 @@ namespace SupermarketManagment {
             public string discount {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.discountColumn]));
+                        return ((string)(this[this.tabledtRecept.discountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'discount\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'discount\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.discountColumn] = value;
+                    this[this.tabledtRecept.discountColumn] = value;
                 }
             }
             
@@ -760,14 +760,14 @@ namespace SupermarketManagment {
             public string total {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.totalColumn]));
+                        return ((string)(this[this.tabledtRecept.totalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'total\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'total\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.totalColumn] = value;
+                    this[this.tabledtRecept.totalColumn] = value;
                 }
             }
             
@@ -776,14 +776,14 @@ namespace SupermarketManagment {
             public string sdate {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.sdateColumn]));
+                        return ((string)(this[this.tabledtRecept.sdateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'sdate\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'sdate\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.sdateColumn] = value;
+                    this[this.tabledtRecept.sdateColumn] = value;
                 }
             }
             
@@ -792,14 +792,14 @@ namespace SupermarketManagment {
             public string status {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.statusColumn]));
+                        return ((string)(this[this.tabledtRecept.statusColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'status\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'status\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.statusColumn] = value;
+                    this[this.tabledtRecept.statusColumn] = value;
                 }
             }
             
@@ -808,135 +808,135 @@ namespace SupermarketManagment {
             public string pdescription {
                 get {
                     try {
-                        return ((string)(this[this.tableDtRecept.pdescriptionColumn]));
+                        return ((string)(this[this.tabledtRecept.pdescriptionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'pdescription\' в таблице \'DtRecept\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'pdescription\' в таблице \'dtRecept\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDtRecept.pdescriptionColumn] = value;
+                    this[this.tabledtRecept.pdescriptionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsidNull() {
-                return this.IsNull(this.tableDtRecept.idColumn);
+                return this.IsNull(this.tabledtRecept.idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetidNull() {
-                this[this.tableDtRecept.idColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IstransactionnoNull() {
-                return this.IsNull(this.tableDtRecept.transactionnoColumn);
+                return this.IsNull(this.tabledtRecept.transactionnoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SettransactionnoNull() {
-                this[this.tableDtRecept.transactionnoColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.transactionnoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IspcodeNull() {
-                return this.IsNull(this.tableDtRecept.pcodeColumn);
+                return this.IsNull(this.tabledtRecept.pcodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetpcodeNull() {
-                this[this.tableDtRecept.pcodeColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.pcodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IspriceNull() {
-                return this.IsNull(this.tableDtRecept.priceColumn);
+                return this.IsNull(this.tabledtRecept.priceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetpriceNull() {
-                this[this.tableDtRecept.priceColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.priceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsqtyNull() {
-                return this.IsNull(this.tableDtRecept.qtyColumn);
+                return this.IsNull(this.tabledtRecept.qtyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetqtyNull() {
-                this[this.tableDtRecept.qtyColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.qtyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsdiscountNull() {
-                return this.IsNull(this.tableDtRecept.discountColumn);
+                return this.IsNull(this.tabledtRecept.discountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetdiscountNull() {
-                this[this.tableDtRecept.discountColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.discountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IstotalNull() {
-                return this.IsNull(this.tableDtRecept.totalColumn);
+                return this.IsNull(this.tabledtRecept.totalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SettotalNull() {
-                this[this.tableDtRecept.totalColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.totalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IssdateNull() {
-                return this.IsNull(this.tableDtRecept.sdateColumn);
+                return this.IsNull(this.tabledtRecept.sdateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetsdateNull() {
-                this[this.tableDtRecept.sdateColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.sdateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsstatusNull() {
-                return this.IsNull(this.tableDtRecept.statusColumn);
+                return this.IsNull(this.tabledtRecept.statusColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetstatusNull() {
-                this[this.tableDtRecept.statusColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.statusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IspdescriptionNull() {
-                return this.IsNull(this.tableDtRecept.pdescriptionColumn);
+                return this.IsNull(this.tabledtRecept.pdescriptionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetpdescriptionNull() {
-                this[this.tableDtRecept.pdescriptionColumn] = global::System.Convert.DBNull;
+                this[this.tabledtRecept.pdescriptionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -944,22 +944,22 @@ namespace SupermarketManagment {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class DtReceptRowChangeEvent : global::System.EventArgs {
+        public class dtReceptRowChangeEvent : global::System.EventArgs {
             
-            private DtReceptRow eventRow;
+            private dtReceptRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DtReceptRowChangeEvent(DtReceptRow row, global::System.Data.DataRowAction action) {
+            public dtReceptRowChangeEvent(dtReceptRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DtReceptRow Row {
+            public dtReceptRow Row {
                 get {
                     return this.eventRow;
                 }
