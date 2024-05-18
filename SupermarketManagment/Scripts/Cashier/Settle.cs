@@ -81,7 +81,7 @@ namespace SupermarketManagment.Scripts.CashierSpace
                         cn.Close();
                     }
                     Recept recept = new Recept(cashier);
-                    //recept.LoadRecept(txtCash.Text, txtChange.Text);
+                    recept.LoadRecept(txtCash.Text, txtChange.Text);
                     recept.ShowDialog();
                     MessageBox.Show("Payment succefully saved!", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cashier.GetTransactionNo();
